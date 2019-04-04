@@ -1,0 +1,8 @@
+# Dimensions
+300 300 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+rss 8 img_igrid_brain img_sos_brain 
+# Files
+ >img_sos_brain <img_igrid_brain
+# Creator
+BART v0.4.03-dirty

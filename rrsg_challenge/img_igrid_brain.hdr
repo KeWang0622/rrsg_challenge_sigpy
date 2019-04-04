@@ -1,0 +1,8 @@
+# Dimensions
+300 300 1 12 1 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+nufft -i -t trajectory_brain rawdata_brain img_igrid_brain 
+# Files
+ >img_igrid_brain <rawdata_brain <trajectory_brain
+# Creator
+BART v0.4.03-dirty

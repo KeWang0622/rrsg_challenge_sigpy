@@ -1,0 +1,8 @@
+# Dimensions
+1 512 96 12 2 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+ecalib -S rawdata_brain maps_brain 
+# Files
+ >maps_brain <rawdata_brain
+# Creator
+BART v0.4.03-dirty
