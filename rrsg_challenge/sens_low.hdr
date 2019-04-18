@@ -1,0 +1,8 @@
+# Dimensions
+300 300 1 12 2 1 1 1 1 1 1 1 1 1 1 1 
+# Command
+ecalib low_res sens_low 
+# Files
+ >sens_low <low_res
+# Creator
+BART v0.4.03-dirty
