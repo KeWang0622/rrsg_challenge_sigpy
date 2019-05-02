@@ -12,18 +12,23 @@ Advances in sensitivity encoding with arbitrary k-space trajectories.
 Magn Reson Med 46: 638-651 (2001)
 """
 #%reset
+import sys
+import os
+cflpath = "../bart/python"
+sys.path.append(os.path.abspath(cflpath))
 
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
 
 from bart import bart
+import cfl
 
 plt.close("all")
 
 #%% Load data
-h5_dataset = h5py.File('rawdata_brain_radial_96proj_12ch.h5', 'r')
-#h5_dataset = h5py.File('rawdata_heart_radial_55proj_34ch.h5', 'r')
+# h5_dataset = h5py.File('rawdata_brain_radial_96proj_12ch.h5', 'r')
+h5_dataset = h5py.File('rawdata_heart_radial_55proj_34ch.h5', 'r')
 print("Keys: %s" % h5_dataset.keys())
 h5_dataset_rawdata_name = list(h5_dataset.keys())[0]
 h5_dataset_trajectory_name = list(h5_dataset.keys())[1]
@@ -48,6 +53,7 @@ plt.title('rawdata coil 1')
 #%%  Demo: NUFFT reconstruction with BART
 # inverse gridding
 img_igrid = bart(1, 'nufft -i -t', trajectory, rawdata)
+cfl.writecfl("heart_igrid",img_igrid)
 
 # channel combination
 img_igrid_sos = bart(1, 'rss 8', img_igrid)
